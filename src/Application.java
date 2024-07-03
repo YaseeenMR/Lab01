@@ -11,19 +11,19 @@ public class Application {
                         case "add":
                             double num1 = Double.parseDouble(args[i + 1]);
                             double num2 = Double.parseDouble(args[i + 2]);
-                            System.out.println("Result of add: " + add(num1, num2));
+                            System.out.println("Result for "+num1+" + "+num2+" = "+add(num1, num2));
                             i++; // Move to the next operation
                             break;
                         case "subtract":
                             num1 = Double.parseDouble(args[i + 1]);
                             num2 = Double.parseDouble(args[i + 2]);
-                            System.out.println("Result of subtract: " + subtract(num1, num2));
+                            System.out.println("Result for "+num1+" - "+num2+" = "+subtract(num1, num2));
                             i++; // Move to the next operation
                             break;
                         case "multiply":
                             num1 = Double.parseDouble(args[i + 1]);
                             num2 = Double.parseDouble(args[i + 2]);
-                            System.out.println("Result of multiply: " + multiply(num1, num2));
+                            System.out.println("Result for "+num1+" * "+num2+" = "+ multiply(num1, num2));
                             i++; // Move to the next operation
                             break;
                         case "divide":
@@ -32,13 +32,13 @@ public class Application {
                             if (num2 == 0) {
                                 System.out.println("Error: Division by zero");
                             } else {
-                                System.out.println("Result of divide: " + divide(num1, num2));
+                                System.out.println("Result for "+num1+" / "+num2+" = "+ divide(num1, num2));
                             }
                             i++; // Move to the next operation
                             break;
                         case "factorial":
                             num1 = Double.parseDouble(args[i + 1]);
-                            System.out.println("Result of factorial: " + factorial(num1));
+                            System.out.println("Result for "+num1+"! "+"is: "+ factorial(num1));
                             break;
                         default:
                             System.out.println("Unknown operation: " + operation);
