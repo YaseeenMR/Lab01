@@ -70,6 +70,12 @@ public class Application {
                             double angleTan = Math.toRadians(Double.parseDouble(args[i + 1]));
                             System.out.println("Result for tan(" + angleTan + ") = " + tan(angleTan));
                             break;
+                        case "permute":
+                            double totalElements = Double.parseDouble(args[i + 1]);
+                            double numSelected = Double.parseDouble(args[i + 2]);
+                            System.out.println("permutations("+totalElements+", "+numSelected+") is: " + permutation(totalElements, numSelected));
+                            i++; // Move to the next operation
+                            break;
                         default:
                             System.out.println("Unknown operation: " + operation);
                             break;
@@ -161,6 +167,13 @@ public class Application {
 				        num1 = scanner.nextDouble();
 				        System.out.println("Result: " + tan(num1));
 				        break;
+				    case "permute":
+				    	System.out.println("Enter the first number:");
+				        num1 = scanner.nextDouble();
+				        System.out.println("Enter the second number:");
+				        num2 = scanner.nextDouble();
+				        System.out.println("permutations("+num1+", "+num2+") is: "+ permutation(num1, num2));
+                        break;
 				    case "exit":
                         System.out.println("Exiting calculator...");
                         scanner.close();
@@ -228,6 +241,17 @@ public class Application {
 	public static double tan(double angleRadians) {
 	    return Math.tan(angleRadians);
 	}
+	// Permutation Function
+    public static double permutation(double n, double r) {
+        if (r < 0 || r > 100 || n < 0 || r > n) {
+        	System.out.println("Invalid input: Make sure 0 <= num2 <= num1 <= 100.");
+        	return Double.NaN;
+        } else if (r == 0) {
+        	return 1;
+        } else {
+        	return n * permutation(n - 1, r - 1);
+        }
+    }
 }
 
 
