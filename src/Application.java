@@ -90,7 +90,7 @@ public class Application {
 			// no CLI arguments
         	Scanner scanner = new Scanner(System.in);
         	while (true) {
-				System.out.println("Enter operation (add, subtract, multiply, divide, pow, sqrt, log, log10, sin, cos, tan, factorial) or 'exit' to quit:");
+				System.out.println("Enter operation (add, subtract, multiply, divide, pow, sqrt, log, log10, sin, cos, tan, factorial, permute) or 'exit' to quit:");
 				String operation = scanner.next();
 				switch (operation.toLowerCase()) {
 				    case "add": // goes to add function
@@ -167,7 +167,7 @@ public class Application {
 				        num1 = scanner.nextDouble();
 				        System.out.println("Result: " + tan(num1));
 				        break;
-				    case "permute":
+				    case "permute": // goes to permutation function
 				    	System.out.println("Enter the first number:");
 				        num1 = scanner.nextDouble();
 				        System.out.println("Enter the second number:");
@@ -251,7 +251,20 @@ public class Application {
         } else {
         	return n * permutation(n - 1, r - 1);
         }
-    }
+    }/*
+    public static double permutation(double n, double r) {
+        if (r < 0 || r > 100 || n < 0 || r > n) {
+            System.out.println("Invalid input: Make sure 0 <= num2 <= num1 <= 100.");
+            return Double.NaN;
+        }
+        
+        double result = 1;
+        for (double i = 0; i < r; i++) {
+            result *= (n - i);
+        }
+        return result;
+
+    }*/ // second method without recursion
 }
 
 
